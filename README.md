@@ -11,9 +11,8 @@
 
 | Membro · Member | Nº | Entidade · Entity | Endpoints da API pública (lista · um item) · Public API endpoints (list · one item) |
 |---|---|---|---|
-| … | … | … | … |
-| … | … | … | … |
-| … | … | … | … |
+|   Tiago Leite   | 22508572 | Pokémon | `https://pokeapi.co/api/v2/pokemon/` |
+|   Pedro Silva   | 22311779 | Trainer | … |
 
 **Uma entidade por membro**, de ponta a ponta: ecrãs Vue (M1), modelo e endpoints (M2), secção do relatório (M3) — e as perguntas da parte B do teste são sobre *a tua* entidade. · **One entity per member**, end to end: Vue screens (M1), model and endpoints (M2), report section (M3) — and your part B test questions are about *your* entity.
 
@@ -21,10 +20,10 @@
 
 | | |
 |---|---|
-| **Tema · Theme** | … |
-| **API pública (M1) · Public API (M1)** | … |
-| **URL base da API · API base URL** | `https://…` |
-| **Entidades (uma por membro) · Entities (one per member)** | … · … · … |
+| **Tema · Theme** | Pokédex & teams |
+| **API pública (M1) · Public API (M1)** | PokéApi |
+| **URL base da API · API base URL** | `https://pokeapi.co/api/v2/` |
+| **Entidades (uma por membro) · Entities (one per member)** | Pokémon · Trainer · … |
 
 Temas propostos (documentação · URL base) · Proposed themes (docs · base URL):
 
