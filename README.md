@@ -25,7 +25,7 @@
 | **Tema · Theme** | Pokédex & teams |
 | **API pública (M1) · Public API (M1)** | PokéApi |
 | **URL base da API · API base URL** | `https://pokeapi.co/api/v2/` |
-| **Entidades (uma por membro) · Entities (one per member)** | Pokémon · Trainer · … |
+| **Entidades (uma por membro) · Entities (one per member)** | Pokémon · Trainer · Team · Tournament |
 
 Temas propostos (documentação · URL base) · Proposed themes (docs · base URL):
 
