@@ -13,7 +13,7 @@
 |---|---|---|---|
 |   Tiago Leite   | 22508572 | Pokémon | `https://pokeapi.co/api/v2/pokemon/` |
 |   Pedro Silva   | 22311779 | Trainer | … |
-|   Diego Vilela   |  | Tournament | … |
+|   Diego Vilela   | 22505041 | Tournament | … |
 |   Elber António   | 22507915 | Team | … |
 
 **Uma entidade por membro**, de ponta a ponta: ecrãs Vue (M1), modelo e endpoints (M2), secção do relatório (M3) — e as perguntas da parte B do teste são sobre *a tua* entidade. · **One entity per member**, end to end: Vue screens (M1), model and endpoints (M2), report section (M3) — and your part B test questions are about *your* entity.
