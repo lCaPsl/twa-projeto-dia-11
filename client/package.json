@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "manage": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:pokemon-api": "node scripts/test-pokemon-api.mjs"
   },
   "dependencies": {
     "vue": "^3.5.42",
