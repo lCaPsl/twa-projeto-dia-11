@@ -10,3 +10,7 @@ dist/
 manage.sh
 manage.cmd
 manage.ps1
+client/manage.sh
+client/manage.cmd
+client/manage.ps1
+
