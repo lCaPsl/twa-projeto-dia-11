@@ -4,9 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "node scripts/ensure-deps.mjs",
     "dev": "vite",
+    "premanage": "node scripts/ensure-deps.mjs",
     "manage": "vite",
+    "prebuild": "node scripts/ensure-deps.mjs",
     "build": "vite build",
+    "prepreview": "node scripts/ensure-deps.mjs",
     "preview": "vite preview",
     "test:pokemon-api": "node scripts/test-pokemon-api.mjs"
   },
