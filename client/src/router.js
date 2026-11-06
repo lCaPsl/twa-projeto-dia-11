@@ -4,15 +4,19 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './Home.vue'
 import ItemsList from './entities/items/ItemsList.vue'
 import ItemDetail from './entities/items/ItemDetail.vue'
+import PokemonList from './entities/Pokemon/PokemonList.vue'
+import PokemonDetail from './entities/Pokemon/PokemonDetail.vue'
+import PokemonSearch from './entities/Pokemon/PokemonSearch.vue'
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/', name: 'home', component: Home },
   // entidade de exemplo · example entity — list + detail
-  { path: '/items', component: ItemsList },
-  { path: '/items/:id', component: ItemDetail },
-  // a tua entidade · your entity:
-  // { path: '/<entidade>', component: <Entidade>List },
-  // { path: '/<entidade>/:id', component: <Entidade>Detail },
+  { path: '/items', name: 'items-list', component: ItemsList },
+  { path: '/items/:id', name: 'item-detail', component: ItemDetail },
+  // Pokémon — named routes match screen components (easier DevTools / debug)
+  { path: '/pokemon', name: 'pokemon-list', component: PokemonList },
+  { path: '/pokemon/search', name: 'pokemon-search', component: PokemonSearch },
+  { path: '/pokemon/:name', name: 'pokemon-detail', component: PokemonDetail },
 ]
 
 export default createRouter({ history: createWebHistory(), routes })

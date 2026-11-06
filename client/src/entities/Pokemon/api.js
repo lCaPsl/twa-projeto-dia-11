@@ -1,3 +1,7 @@
-const BASE = 'https://pokeapi.co/api/v2'
-export const list = () => getJSON(`${BASE}/pokemon?limit=50`).then((r) => r.results)
-export const get = (name) => getJSON(`${BASE}/pokemon/${name}`)
+// entities/Pokemon/api.js — public SSOT entry for this entity.
+// UI and tests import ONLY from here. Internals live under ./api/
+
+export { parseKey } from './api/parseKey.js'
+export { listPokemon as list } from './api/listPokemon.js'
+export { getPokemon as get } from './api/getPokemon.js'
+export { formatId, formatName, heightMeters, weightKg } from './api/format.js'

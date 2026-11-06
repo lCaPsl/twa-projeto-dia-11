@@ -7,7 +7,7 @@
   <nav>
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/items">Items</RouterLink>
-    <!-- <RouterLink to="/<entidade>"><Entidade></RouterLink> -->
+    <RouterLink to="/pokemon">Pokémon</RouterLink>
   </nav>
   <RouterView />
 </template>
