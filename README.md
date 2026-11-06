@@ -49,7 +49,10 @@ Temas propostos (documentação · URL base) · Proposed themes (docs · base UR
 ```sh
 cd client
 npm install
-npm run dev          # http://localhost:5173
+npm run manage           # live Vite · http://localhost:5173
+npm run test:pokemon-api # mocked API unit tests
+
+# Optional local launchers (gitignored): manage.sh / manage.cmd / manage.ps1
 ```
 
 Requisitos · Requirements: Node.js 22 LTS, npm 10, Git.

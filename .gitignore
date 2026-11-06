@@ -3,3 +3,10 @@ dist/
 .env
 .DS_Store
 *.log
+
+.ai/
+
+# Local manage launchers (optional; use npm run manage in client/)
+manage.sh
+manage.cmd
+manage.ps1
