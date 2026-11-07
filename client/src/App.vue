@@ -8,6 +8,7 @@
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/items">Items</RouterLink>
     <RouterLink to="/pokemon">Pokémon</RouterLink>
+    <RouterLink to="/abilities">Abilities</RouterLink>
   </nav>
   <RouterView />
 </template>
