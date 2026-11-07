@@ -1,38 +1,39 @@
 <script setup>
-// ItemDetail.vue — ecrã de detalhe: o id vem do URL (/items/:id). · Detail screen: the id comes from the URL.
-import { ref } from 'vue'
+// ItemDetail.vue — detalhe: o id vem do URL (/items/:id), useLoad(() => get(id)).
+// Detail: the id comes from the URL.
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { useLoad } from '../../useLoad.js'
 import { get } from './api.js'
+import { findLocalItem, isLocalId } from './localStore.js'
 
 const route = useRoute()
-const status = ref('loading')
-const error = ref(null)
-const item = ref(null)
+const id = computed(() => route.params.id)
 
-async function load() {
-  status.value = 'loading'
-  try {
-    item.value = await get(route.params.id)
-    if (!item.value) throw new Error(`Item ${route.params.id} not found`)
-    status.value = 'ready'
-  } catch (err) {
-    status.value = 'error'
-    error.value = err.message
+const { status, error, data: item, reload } = useLoad((signal) => {
+  // itens criados no formulário vivem no store local, não na API
+  if (isLocalId(id.value)) {
+    const local = findLocalItem(id.value)
+    if (!local) throw new Error('Local item not found (local items are lost on reload)')
+    return local
   }
-}
-load()
+  return get(id.value, signal)
+}, id)
 </script>
 
 <template>
-  <p><RouterLink to="/items">← Items</RouterLink></p>
+  <p><RouterLink :to="{ name: 'items-list' }">← Items</RouterLink></p>
   <p v-if="status === 'loading'" class="status">Loading…</p>
-  <p v-else-if="status === 'error'" class="status">Error: {{ error }}</p>
+  <p v-else-if="status === 'error'" class="status">
+    Error: {{ error }} <button type="button" @click="reload">Retry</button>
+  </p>
   <template v-else>
-    <h2>{{ item.name }}</h2>
+    <h2>{{ item.name }} <small v-if="item.local">(local)</small></h2>
+    <img v-if="item.sprite" :src="item.sprite" :alt="item.name" width="96" height="96" />
     <dl>
       <dt>Category</dt><dd>{{ item.category }}</dd>
-      <dt>Price</dt><dd>{{ item.price.toFixed(2) }} €</dd>
-      <dt>Tags</dt><dd>{{ item.tags.join(', ') }}</dd>
+      <dt>Cost</dt><dd>{{ item.cost }}</dd>
+      <dt>Effect</dt><dd>{{ item.effect || '—' }}</dd>
     </dl>
   </template>
 </template>

@@ -88,6 +88,22 @@ server/                      API Express + MongoDB — a partir da Aula 08 (M2) 
 
 **IA generativa · Generative AI:** permitida no projeto com **declaração obrigatória** no README e no relatório (o que, onde, como foi verificado). · allowed in the project with a **mandatory declaration** in the README and the report (what, where, how it was checked).
 
+## Quem fez o quê · Who did what
+
+| Membro · Member | Entidade · Entity | Pasta · Folder |
+|---|---|---|
+| Tiago Leite | Pokémon | `client/src/entities/Pokemon/` |
+| Pedro Silva | Moves | `client/src/entities/moves/` _(a preencher)_ |
+| Diego Vilela | Items | `client/src/entities/items/` + `client/src/useLoad.js` |
+| Elber António | Abilities | `client/src/entities/abilities/` _(a preencher)_ |
+
+Notas sobre Items · Notes on Items:
+- A lista da PokéAPI só devolve `name` e `url`; o `api.js` extrai o id do `url` e o detalhe vai a `/item/{id}`.
+- A API é só de leitura: o formulário guarda num store local em memória (`localStore.js`) e os itens criados aparecem na lista marcados como _local_ (perdem-se ao recarregar). No M2 o mesmo formulário passa a fazer POST à nossa API.
+
 ## Declaração de IA · AI declaration
 
-…
+- **O quê · What:** Claude (Anthropic) gerou a entidade Items e o composable `useLoad`, e atualizou `router.js` e `Home.vue`.
+- **Onde · Where:** `client/src/entities/items/*`, `client/src/useLoad.js`, `client/src/router.js`, `client/src/Home.vue` e esta secção do README.
+- **Como foi verificado · How it was checked:** `npm run build` sem erros e a `api.js` testada com respostas simuladas da PokéAPI. _(Diego: acrescentar aqui o teste manual no browser — lista, página 2, detalhe, reload do detalhe, `/items/new` e back.)_
+
