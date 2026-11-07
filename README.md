@@ -105,5 +105,4 @@ Notas sobre Items · Notes on Items:
 
 - **O quê · What:** Claude (Anthropic) gerou a entidade Items e o composable `useLoad`, e atualizou `router.js` e `Home.vue`.
 - **Onde · Where:** `client/src/entities/items/*`, `client/src/useLoad.js`, `client/src/router.js`, `client/src/Home.vue` e esta secção do README.
-- **Como foi verificado · How it was checked:** `npm run build` sem erros e a `api.js` testada com respostas simuladas da PokéAPI. _(Diego: acrescentar aqui o teste manual no browser — lista, página 2, detalhe, reload do detalhe, `/items/new` e back.)_
-
+- **Como foi verificado · How it was checked:** `npm run build` sem erros, `api.js` testada com respostas simuladas da PokéAPI e teste manual no browser (lista, página 2, detalhe, reload do detalhe, formulário em `/items/new` e botão voltar).
