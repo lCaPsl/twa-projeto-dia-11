@@ -111,6 +111,12 @@ Notas sobre Abilities · Notes on Abilities:
 - **Onde · Where:** `client/src/entities/items/*`, `client/src/useLoad.js`, `client/src/router.js`, `client/src/Home.vue` e esta secção do README.
 - **Como foi verificado · How it was checked:** `npm run build` sem erros, `api.js` testada com respostas simuladas da PokéAPI e teste manual no browser (lista, página 2, detalhe, reload do detalhe, formulário em `/items/new` e botão voltar).
 
+**Moves (Pedro Silva):**
+- **Moves e integração com `main`**
+- **O quê · What:** O assistente de IA do Copilot no VS Code ajudou a atualizar a branch `moves` com as alterações da `main` e a resolver o merge, preservando a navegação e as rotas de Moves e Abilities. Também ajudou a implementar etiquetas coloridas para os tipos dos moves e uma live search por nome parcial.
+- **Onde · Where:** `client/src/App.vue`, `client/src/router.js` e `client/src/entities/moves/` (etiquetas de tipo e pesquisa em tempo real).
+- **Como foi verificado · How it was checked:** O utilizador resolveu os conflitos e concluiu o merge. `npm.cmd run build` foi executado na pasta `client` e terminou sem erros.
+
 **Abilities (Elber António):**
 - **O quê · What:** Claude (Anthropic) gerou a entidade Abilities (`api.js`, `AbilitiesList.vue`, `AbilityDetail.vue`, `AbilityForm.vue`, `AbilityNew.vue`) e acrescentou as rotas ao `router.js`, o link à `App.vue` e o link da entidade à `Home.vue`.
 - **Onde · Where:** `client/src/entities/abilities/*`, `client/src/router.js`, `client/src/App.vue`, `client/src/Home.vue` e a secção Abilities deste README.
