@@ -8,6 +8,9 @@ import ItemNew from './entities/items/ItemNew.vue'
 import PokemonList from './entities/Pokemon/PokemonList.vue'
 import PokemonDetail from './entities/Pokemon/PokemonDetail.vue'
 import PokemonSearch from './entities/Pokemon/PokemonSearch.vue'
+import MovesList from './entities/moves/views/MovesList.vue'
+import MoveDetail from './entities/moves/views/MoveDetail.vue'
+import MoveNew from './entities/moves/views/MoveNew.vue'
 
 const routes = [
   { path: '/', name: 'home', component: Home },
@@ -19,6 +22,10 @@ const routes = [
   { path: '/pokemon', name: 'pokemon-list', component: PokemonList },
   { path: '/pokemon/search', name: 'pokemon-search', component: PokemonSearch },
   { path: '/pokemon/:name', name: 'pokemon-detail', component: PokemonDetail },
+  // Moves (Pedro)
+  { path: '/moves', name: 'moves-list', component: MovesList },
+  { path: '/moves/new', name: 'move-new', component: MoveNew },
+  { path: '/moves/:id', name: 'move-detail', component: MoveDetail },
 ]
 
 export default createRouter({ history: createWebHistory(), routes })
