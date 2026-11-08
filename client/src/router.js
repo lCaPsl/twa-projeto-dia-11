@@ -8,6 +8,9 @@ import ItemNew from './entities/items/ItemNew.vue'
 import PokemonList from './entities/Pokemon/PokemonList.vue'
 import PokemonDetail from './entities/Pokemon/PokemonDetail.vue'
 import PokemonSearch from './entities/Pokemon/PokemonSearch.vue'
+import MovesList from './entities/moves/views/MovesList.vue'
+import MoveDetail from './entities/moves/views/MoveDetail.vue'
+import MoveNew from './entities/moves/views/MoveNew.vue'
 import AbilitiesList from './entities/abilities/AbilitiesList.vue'
 import AbilityDetail from './entities/abilities/AbilityDetail.vue'
 import AbilityNew from './entities/abilities/AbilityNew.vue'
@@ -22,6 +25,10 @@ const routes = [
   { path: '/pokemon', name: 'pokemon-list', component: PokemonList },
   { path: '/pokemon/search', name: 'pokemon-search', component: PokemonSearch },
   { path: '/pokemon/:name', name: 'pokemon-detail', component: PokemonDetail },
+  // Moves (Pedro)
+  { path: '/moves', name: 'moves-list', component: MovesList },
+  { path: '/moves/new', name: 'move-new', component: MoveNew },
+  { path: '/moves/:id', name: 'move-detail', component: MoveDetail },
   // Abilities (Elber) — /abilities/new antes de /abilities/:id · /abilities/new before /abilities/:id
   { path: '/abilities', name: 'abilities-list', component: AbilitiesList },
   { path: '/abilities/new', name: 'ability-new', component: AbilityNew },
