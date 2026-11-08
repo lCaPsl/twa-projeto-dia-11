@@ -3,7 +3,7 @@
 // Project home page: theme, API used, members and entities.
 const members = [
   { name: 'Tiago Leite', nr: '22508572', entity: 'Pokémon', to: '/pokemon' },
-  { name: 'Pedro Silva', nr: '22311779', entity: 'Moves', to: null },
+  { name: 'Pedro Silva', nr: '22311779', entity: 'Moves', to: '/moves' },
   { name: 'Diego Vilela', nr: '22505041', entity: 'Items', to: '/items' },
   { name: 'Elber António', nr: '22507915', entity: 'Abilities', to: '/abilities' },
 ]
