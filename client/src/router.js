@@ -11,6 +11,9 @@ import PokemonSearch from './entities/Pokemon/PokemonSearch.vue'
 import MovesList from './entities/moves/views/MovesList.vue'
 import MoveDetail from './entities/moves/views/MoveDetail.vue'
 import MoveNew from './entities/moves/views/MoveNew.vue'
+import AbilitiesList from './entities/abilities/AbilitiesList.vue'
+import AbilityDetail from './entities/abilities/AbilityDetail.vue'
+import AbilityNew from './entities/abilities/AbilityNew.vue'
 
 const routes = [
   { path: '/', name: 'home', component: Home },
@@ -26,6 +29,10 @@ const routes = [
   { path: '/moves', name: 'moves-list', component: MovesList },
   { path: '/moves/new', name: 'move-new', component: MoveNew },
   { path: '/moves/:id', name: 'move-detail', component: MoveDetail },
+  // Abilities (Elber) — /abilities/new antes de /abilities/:id · /abilities/new before /abilities/:id
+  { path: '/abilities', name: 'abilities-list', component: AbilitiesList },
+  { path: '/abilities/new', name: 'ability-new', component: AbilityNew },
+  { path: '/abilities/:id', name: 'ability-detail', component: AbilityDetail },
 ]
 
 export default createRouter({ history: createWebHistory(), routes })

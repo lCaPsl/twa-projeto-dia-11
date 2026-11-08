@@ -5,7 +5,7 @@ const members = [
   { name: 'Tiago Leite', nr: '22508572', entity: 'Pokémon', to: '/pokemon' },
   { name: 'Pedro Silva', nr: '22311779', entity: 'Moves', to: null },
   { name: 'Diego Vilela', nr: '22505041', entity: 'Items', to: '/items' },
-  { name: 'Elber António', nr: '22507915', entity: 'Abilities', to: null },
+  { name: 'Elber António', nr: '22507915', entity: 'Abilities', to: '/abilities' },
 ]
 </script>
 

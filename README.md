@@ -95,14 +95,23 @@ server/                      API Express + MongoDB — a partir da Aula 08 (M2) 
 | Tiago Leite | Pokémon | `client/src/entities/Pokemon/` |
 | Pedro Silva | Moves | `client/src/entities/moves/` _(a preencher)_ |
 | Diego Vilela | Items | `client/src/entities/items/` + `client/src/useLoad.js` |
-| Elber António | Abilities | `client/src/entities/abilities/` _(a preencher)_ |
+| Elber António | Abilities | `client/src/entities/abilities/` |
 
 Notas sobre Items · Notes on Items:
 - A lista da PokéAPI só devolve `name` e `url`; o `api.js` extrai o id do `url` e o detalhe vai a `/item/{id}`.
 - A API é só de leitura: o formulário guarda num store local em memória (`localStore.js`) e os itens criados aparecem na lista marcados como _local_ (perdem-se ao recarregar). No M2 o mesmo formulário passa a fazer POST à nossa API.
+
+Notas sobre Abilities · Notes on Abilities:
+- A lista da PokéAPI (`/ability/?limit=20&offset=N`) só devolve `name` e `url`; o `api.js` extrai o id do `url` e o detalhe vai a `/ability/{id}`. A página fica no URL (`?page=`), por isso back, reload e links partilháveis funcionam.
+- A API é só de leitura: o formulário (`/abilities/new`) guarda num array em memória dentro do `api.js` (`create()`) e as habilidades criadas aparecem à frente da lista, na página 1, marcadas como _(local)_ (perdem-se ao recarregar). No M2 as mesmas funções `list`, `get` e `create` passam a falar com a nossa API.
 
 ## Declaração de IA · AI declaration
 
 - **O quê · What:** Claude (Anthropic) gerou a entidade Items e o composable `useLoad`, e atualizou `router.js` e `Home.vue`.
 - **Onde · Where:** `client/src/entities/items/*`, `client/src/useLoad.js`, `client/src/router.js`, `client/src/Home.vue` e esta secção do README.
 - **Como foi verificado · How it was checked:** `npm run build` sem erros, `api.js` testada com respostas simuladas da PokéAPI e teste manual no browser (lista, página 2, detalhe, reload do detalhe, formulário em `/items/new` e botão voltar).
+
+**Abilities (Elber António):**
+- **O quê · What:** Claude (Anthropic) gerou a entidade Abilities (`api.js`, `AbilitiesList.vue`, `AbilityDetail.vue`, `AbilityForm.vue`, `AbilityNew.vue`) e acrescentou as rotas ao `router.js`, o link à `App.vue` e o link da entidade à `Home.vue`.
+- **Onde · Where:** `client/src/entities/abilities/*`, `client/src/router.js`, `client/src/App.vue`, `client/src/Home.vue` e a secção Abilities deste README.
+- **Como foi verificado · How it was checked:** `npm run build` sem erros e `api.js` testada com respostas simuladas da PokéAPI (lista, página 2, detalhe, item local). Teste manual no browser: lista, página 2, detalhe, reload do detalhe e `/abilities/new` → guardar → back (o item novo aparece primeiro, marcado como local), consola sem erros.
