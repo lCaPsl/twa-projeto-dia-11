@@ -7,12 +7,12 @@
 
 ## Grupo · Group
 
-**Turma:** Dia / Noite
+**Turma:** Dia
 
 | Membro · Member | Nº | Entidade · Entity | Endpoints da API pública (lista · um item) · Public API endpoints (list · one item) |
 |---|---|---|---|
 |   Tiago Leite   | 22508572 | Pokémon | `https://pokeapi.co/api/v2/pokemon/` |
-|   Pedro Silva   | 22311779 | Moves | `https://pokeapi.co/api/v2/move/` |
+|   Pedro Silva   | 22311779 | Moves | `https://pokeapi.co/api/v2/move/` + `https://pokeapi.co/api/v2/move/1` |
 |   Diego Vilela   | 22505041 | Items | `https://pokeapi.co/api/v2/item/` |
 |   Elber António   | 22507915 | Abilities | `https://pokeapi.co/api/v2/ability/` |
 
@@ -93,7 +93,7 @@ server/                      API Express + MongoDB — a partir da Aula 08 (M2) 
 | Membro · Member | Entidade · Entity | Pasta · Folder |
 |---|---|---|
 | Tiago Leite | Pokémon | `client/src/entities/Pokemon/` |
-| Pedro Silva | Moves | `client/src/entities/moves/` _(a preencher)_ |
+| Pedro Silva | Moves | `client/src/entities/moves/` |
 | Diego Vilela | Items | `client/src/entities/items/` + `client/src/useLoad.js` |
 | Elber António | Abilities | `client/src/entities/abilities/` |
 
