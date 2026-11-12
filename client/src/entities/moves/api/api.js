@@ -1,10 +1,13 @@
 // Moves API client. All public PokéAPI URLs for this entity live here.
 import { getJSON } from '../../../api/getJSON.js'
+import { reactive } from 'vue'
 
 const BASE = 'https://pokeapi.co/api/v2/move'
 export const PAGE_SIZE = 15
 
 const idFromUrl = (url) => url.split('/').filter(Boolean).pop()
+
+export const localMoves = reactive([])
 
 export async function list(page = 1, signal) {
   const offset = (page - 1) * PAGE_SIZE
@@ -31,6 +34,12 @@ export async function searchByName(query, signal) {
 }
 
 export async function get(id, signal) {
+  const local = localMoves.find((move) => move.id === String(id))
+  if (local) return local
+  if (String(id).startsWith('local-')) {
+    throw new Error('Local move not found; locally created moves are lost on reload.')
+  }
+
   const data = await getJSON(`${BASE}/${encodeURIComponent(id)}`, { signal })
   const effect = data.effect_entries?.find((entry) => entry.language.name === 'en')
 
@@ -45,4 +54,10 @@ export async function get(id, signal) {
     priority: data.priority,
     type: data.type?.name ?? '',
   }
+}
+
+export function create(draft) {
+  const move = { ...draft, id: `local-${Date.now()}`, local: true }
+  localMoves.push(move)
+  return move
 }

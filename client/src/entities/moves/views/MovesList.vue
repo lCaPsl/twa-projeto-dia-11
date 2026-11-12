@@ -2,8 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useLoad } from '../../../useLoad.js'
-import { list, PAGE_SIZE, searchByName } from '../api/api.js'
-import { localMoves } from '../data/localStore.js'
+import { list, localMoves, PAGE_SIZE, searchByName } from '../api/api.js'
 
 const route = useRoute()
 const router = useRouter()

@@ -3,18 +3,12 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useLoad } from '../../../useLoad.js'
 import { get } from '../api/api.js'
-import { findLocalMove, isLocalId } from '../data/localStore.js'
 import MoveTypeBadge from '../components/MoveTypeBadge.vue'
 
 const route = useRoute()
 const id = computed(() => route.params.id)
 
 const { status, error, data: move, reload } = useLoad((signal) => {
-  if (isLocalId(id.value)) {
-    const local = findLocalMove(id.value)
-    if (!local) throw new Error('Local move not found; locally created moves are lost on reload.')
-    return local
-  }
   return get(id.value, signal)
 }, id)
 </script>

@@ -1,12 +1,12 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import MoveForm from '../components/MoveForm.vue'
-import { addLocalMove } from '../data/localStore.js'
+import { create } from '../api/api.js'
 
 const router = useRouter()
 
 function onSave(draft) {
-  const move = addLocalMove(draft)
+  const move = create(draft)
   router.push({ name: 'move-detail', params: { id: move.id } })
 }
 </script>
